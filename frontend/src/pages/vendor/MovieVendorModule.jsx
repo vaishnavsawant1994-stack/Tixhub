@@ -57,7 +57,7 @@ function MovieVendorModule({
 
     movieBookings.forEach((booking) => {
       const date = new Date(
-        booking.createdAt || booking.bookingDate || booking.updatedAt || Date.now()
+        booking.createdAt || booking.bookingDate || booking.updatedAt || 0
       );
       const index = Number.isNaN(date.getTime()) ? 0 : (date.getDay() + 6) % 7;
       days[index].value += 1;
